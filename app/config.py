@@ -6,6 +6,9 @@ from pydantic_settings import BaseSettings
 
 
 class Settings(BaseSettings):
+    # Add this new field; it will be read if present in the environment
+    DATABASE_URL: str | None = None
+    
     DATABASE_HOSTNAME: str
     DATABASE_PORT: int
     DATABASE_PASSWORD: str
